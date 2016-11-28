@@ -9,23 +9,19 @@ const styles = {
     flexDirection: 'row',
     
     alignItems: 'center',
-    justifyContent: 'center'
-    // height: '100%',
-    // width: '100%',
+    justifyContent: 'center',
+    backgroundColor: '#0889FF',
   },
   
   aboutUs: {
     order: 1,
     flexGrow: 1,
-    //alignItems: 'center',
-    
     color: 'white',
     backgroundColor: '#0889FF',
   },
   location: {
     order: 2,
     flexGrow: 1,
-    // flexBasis: '100%',
   },
   
   quote: {

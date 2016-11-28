@@ -93,7 +93,7 @@ const getCarouselSlides = () => {
       <Image alt='carouselItem' src={carouselImage}/>
     </CardMedia>
   </Card>,
-  <div key='slide2'>{'TEEETSTSTTSTSTS'}</div>]
+  <div key='slide2'>{'Dummy Slide'}</div>]
 }
 
 // TODO Use icon font instead of images
@@ -110,8 +110,6 @@ const styles = {
     display: 'flex',
     backgroundColor:'white',
     flexDirection: 'column'
-    // TODO
-    // flexBasis? http://www.w3.org/TR/css3-flexbox/images/rel-vs-abs-flex.svg
   }
 }
 
@@ -132,11 +130,11 @@ class App extends Component {
         </section>
 
         <section id="works">
-          <Works works={getWorks()}/>
+          <Works title='Our Work' works={getWorks()}/>
         </section>
 
         <section id="team">
-          <Team members={getTeam()}/>
+          <Team title='Our Team' members={getTeam()}/>
         </section>
 
         <section id="about">

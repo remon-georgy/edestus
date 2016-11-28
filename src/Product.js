@@ -15,7 +15,7 @@ const styles = {
     flexOrder: 1,
     flexGrow: 1,
     textAlign: 'left',
-    padding: '10% 0 10% 10%',
+    padding: '15% 0 15% 15%',
     flexBasis: '100%',
   },
   downloadButton: {

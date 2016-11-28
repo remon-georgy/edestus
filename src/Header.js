@@ -4,7 +4,15 @@ import NavLink from './NavLink'
 
 const styles = {
   toolbar: {
-    backgroundColor:'white'
+    backgroundColor:'white',
+    height: '130px',
+  },
+  logo: {
+    fontSize: '30px',
+    lineHeight: '30px',
+    letterSpacing: '4px',
+    color: '#333333',
+    paddingLeft: '130px'
   }
 }
 
@@ -14,7 +22,7 @@ const Header = ({links, logo}) => {
 
   return (
     <Toolbar style={styles.toolbar}>
-      <ToolbarGroup>
+      <ToolbarGroup style={styles.logo}>
         {logo}
       </ToolbarGroup>
       <ToolbarGroup>

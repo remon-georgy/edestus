@@ -18,7 +18,11 @@ $ npm start
 
 ## TODO
 **given enought time I would tackle the following points:**
+* Add missing styles.
+* Add all overlaying text.
 * Use react-router hash history for navigation
 * Move components to a dedicated directory, while instructing webpack to load modules from there.
 * Same for images.
 * Some sectios are properly responsive, while others could use more work, namely Product and About sections.
+* Move all colors to a shared palette.
+* Add at least one unit test to make sure App is reachable.

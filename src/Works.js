@@ -2,6 +2,14 @@ import React, {PropTypes} from 'react';
 import Image from './Image';
 
 const styles = {
+  title: {
+    fontSize: '42px',
+    lineHeight: '57px',
+    letterSpacing: '-1px',
+    color: '#333333',
+    paddingTop: '45px',
+    paddingBottom: '45px',
+  },
   workContainer: {
     display: 'flex',
     flexDirection: 'row',
@@ -29,14 +37,14 @@ Work.propTypes = {
   alt: PropTypes.string.isRequired
 }
 
-const Works = ({works}) => {
+const Works = ({title, works}) => {
   console.log(works)
   const work = works.map((work, i) =>
     <Work style={styles.work} key={i} image={work.image} alt={`${i}`} />);
 
   return (
     <div style={styles.container}>
-      <h2>Our Work</h2>
+      <div style={styles.title}>{title}</div>
       <div style={styles.workContainer}>
         {work}
       </div>
@@ -44,6 +52,7 @@ const Works = ({works}) => {
   )
 }
 Works.propTypes = {
+  title: PropTypes.string.isRequired,
   works: PropTypes.array.isRequired
 }
 

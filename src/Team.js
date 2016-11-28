@@ -2,13 +2,20 @@ import React, {PropTypes} from 'react';
 import Image from './Image';
 
 const styles = {
+  title: {
+    fontSize: '42px',
+    lineHeight: '57px',
+    letterSpacing: '-1px',
+    color: '#333333',
+    paddingTop: '45px',
+    paddingBottom: '45px',
+  },
   teamContainer: {
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'nowrap',
     flexBasis: '100%',
     overflow: 'hidden',
-    // TODO    justifyContent: 'space-between'
   },
   teamMember: {
     flexGrow: 1,
@@ -29,12 +36,12 @@ TeamMember.propTypes = {
   image: PropTypes.string.isRequired,
 }
 
-const Team = ({members}) => {
+const Team = ({title, members}) => {
   const team = members.map((member) => <TeamMember key={member.ID} image={member.image}/>)
 
   return (
     <div>
-      <h2>Our Team</h2>
+      <div style={styles.title}>{title}</div>
       <div style={styles.teamContainer}>
         {team}
       </div>
@@ -42,6 +49,7 @@ const Team = ({members}) => {
   )
 }
 Team.propTypes = {
+  title: PropTypes.string.isRequired,
   members: PropTypes.array.isRequired,
 }
 

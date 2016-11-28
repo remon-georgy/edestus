@@ -4,7 +4,6 @@ import {Toolbar, ToolbarGroup} from 'material-ui/Toolbar';
 import NavLink from './NavLink'
 import {capitalize} from 'lodash'
 
-
 const styles = {
   container: {
     backgroundColor: '#1B1B1B',
