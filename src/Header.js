@@ -1,6 +1,6 @@
 import React from 'react';
 import {Toolbar, ToolbarGroup} from 'material-ui/Toolbar';
-import FlatButton from 'material-ui/FlatButton';
+import NavLink from './NavLink'
 
 const styles = {
   toolbar: {
@@ -8,18 +8,18 @@ const styles = {
   }
 }
 
-const Header = () => {
+const Header = ({links, logo}) => {
+  console.log(links)
+  const NavLinks = links.map(({title, path}) =>
+    <NavLink key={title} path={path} title={title.toUpperCase()} />)
+
   return (
     <Toolbar style={styles.toolbar}>
       <ToolbarGroup>
-        MACHO
+        {logo}
       </ToolbarGroup>
       <ToolbarGroup>
-        <FlatButton style={{borderColor: 'red', borderStyle:'solid'}}>PRODUCT</FlatButton>
-        <FlatButton>WORK</FlatButton>
-        <FlatButton>TEAM</FlatButton>
-        <FlatButton>ABOUT</FlatButton>
-        <FlatButton>CONTACT</FlatButton>
+        {NavLinks}
       </ToolbarGroup>
     </Toolbar>
   )

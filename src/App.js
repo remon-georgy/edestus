@@ -9,6 +9,9 @@ import Team from './Team';
 import Product from './Product';
 import Carousel from './Carousel';
 
+import twitter from './images/twitter.png'
+import gplus from './images/google-plus.png'
+import facebook from './images/facebook.png'
 import carouselImage from './images/photo-1440439307159-c3afc8a8e4ff.jpeg';
 import iphoneImage from './images/iPhone_6.png';
 
@@ -19,6 +22,23 @@ Nullam quis risus eget urna mollis ornare vel eu leo. Integer posuere erat a ant
 const productTitle = 'The Macho App'
 
 const logo = 'MACHO'
+
+const links = [{
+    title: 'product',
+    path: '#product',
+  }, {
+    title: 'works',
+    path: '#works',
+  }, {
+    title: 'team',
+    path: '#team',
+  }, {
+    title: 'about',
+    path: '#about',
+  }, {
+    title: 'contact us',
+    path: '',
+}]
 
 const getTeam = () => {
   return [{
@@ -64,6 +84,15 @@ const getWorks = () => {
   }]
 }
 
+// TODO Use icon font instead of images
+const getSocialIcons = () => {
+  return [
+    <img key='facebook' alt='facebook' src={facebook}/>,
+    <img key='twitter' alt='twitter' src={twitter}/>,
+    <img key='gplus' alt='gplus' src={gplus}/>
+  ]
+}
+
 const styles = {
   container: {
     display: 'flex',
@@ -87,11 +116,6 @@ const styles = {
     order: 2,
     flexGrow: 1,
     flexBasis: 'auto'
-  },
-
-  image: {
-    maxWidth: '100%',
-    maxHeight: '100%'
   }
 }
 
@@ -100,26 +124,26 @@ class App extends Component {
     return (
       <div className="App" style={styles.container}>
         <header>
-          <Header />
+          <Header logo={logo} links={links}/>
         </header>
 
         <section>
           <Carousel image={carouselImage} />
         </section>
 
-        <section>
+        <section id="product">
           <Product title={productTitle} image={iphoneImage} text={productText}/>
         </section>
 
-        <section>
+        <section id="works">
           <Works works={getWorks()}/>
         </section>
 
-        <section>
+        <section id="team">
           <Team members={getTeam()}/>
         </section>
 
-        <section style={styles.aboutContainer}>
+        <section id="about" style={styles.aboutContainer}>
           <div style={styles.aboutUs}>
             <About />
           </div>
@@ -129,7 +153,7 @@ class App extends Component {
         </section>
 
         <footer>
-          <Footer logo={logo}/>
+          <Footer logo={logo} links={links} icons={getSocialIcons()}/>
         </footer>
 
       </div>

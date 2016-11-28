@@ -1,11 +1,8 @@
 import React from 'react';
 import Divider from 'material-ui/Divider';
-import FlatButton from 'material-ui/FlatButton';
 import {Toolbar, ToolbarGroup} from 'material-ui/Toolbar';
-
-import twitter from './images/twitter.png'
-import gplus from './images/google-plus.png'
-import facebook from './images/facebook.png'
+import NavLink from './NavLink'
+import {capitalize} from 'lodash'
 
 
 const styles = {
@@ -37,42 +34,17 @@ const styles = {
   }
 }
 
-const getNav = () => {
-  return [
-    'Product',
-    'Works',
-    'Team',
-    'About',
-    'Contact US'
-  ]
-}
-
-// TODO Use icon font instead of images
-const getSocialIcons = () => {
-  return [
-    <img key='facebook' alt='facebook' src={facebook}/>,
-    <img key='twitter' alt='twitter' src={twitter}/>,
-    <img key='gplus' alt='gplus' src={gplus}/>
-  ]
-}
-
-const NavButton = ({children}) => {
-  return (
-    <FlatButton>{children}</FlatButton>
-  )
-}
-
-
-const Footer = ({logo}) => {
-  const navButtons = getNav().map((nav, i) => <NavButton key={i} children={nav} />);
-  const icons = getSocialIcons()
+const Footer = ({logo, links, icons}) => {
+  const navLinks = links.map(({title, path}) =>
+    <NavLink key={title} path={path} title={capitalize(title)} />)
+  
   return (
     <div style={styles.container}>
       <div style={styles.logo}>{logo}</div>
       <Divider style={styles.divider}/>
       <Toolbar style={styles.toolbar}>
         <ToolbarGroup firstChild={true}>
-          {navButtons}
+          {navLinks}
         </ToolbarGroup>
         <ToolbarGroup lastChild={true}>
           {icons}

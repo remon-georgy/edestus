@@ -26,7 +26,6 @@ const Work = ({image, alt}, context) => {
 }
 
 const Works = ({works}) => {
-  console.log(works)
   const work = works.map((work, i) => <Work style={styles.work} key={i} image={work.image}/>);
 
   return (

@@ -23,7 +23,7 @@ const styles = {
 const TeamMember = ({ID, image}, context) => {
   const staticPath = require(image)
   return (<div style={styles.teamMember}>
-    <Image alt={staticPath} style={styles.image} src={staticPath} />
+    <Image alt={staticPath} src={staticPath} />
   </div>)
 }
 
