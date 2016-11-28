@@ -1,17 +1,33 @@
 import React from 'react';
 import FlatButton from 'material-ui/FlatButton';
+import {Card, CardMedia} from 'material-ui/Card';
+import MapComponent from 'react-cartographer/lib/components/Map';
 
 const styles = {
   container: {
     display: 'flex',
-    justifyContent: 'center',
-    alignContent: 'center',
-    flexDirection: 'column',
-    height: '100%',
-    width: '100%',
-    color: 'white',
-    backgroundColor: '#0889FF'
+    flexDirection: 'row',
+    
+    alignItems: 'center',
+    justifyContent: 'center'
+    // height: '100%',
+    // width: '100%',
   },
+  
+  aboutUs: {
+    order: 1,
+    flexGrow: 1,
+    //alignItems: 'center',
+    
+    color: 'white',
+    backgroundColor: '#0889FF',
+  },
+  location: {
+    order: 2,
+    flexGrow: 1,
+    // flexBasis: '100%',
+  },
+  
   quote: {
     marginLeft: '86px',
     marginRight: '86px',
@@ -25,9 +41,30 @@ const styles = {
     borderRadius: '40px',
     // TODO find an alternative
     alignSelf: 'center'
-  }
+  },
 }
 
+// TODO pass props from parent.
+const Location = ((address) => {
+  return (
+    <Card>
+      <CardMedia>
+        <MapComponent
+          provider='google'
+          providerKey=''
+          mapId='map'
+          addressLine1='350 W Georgia St'
+          city='Vancouver'
+          state='BC'
+          country='Canada'
+          zoom={15}
+          height={600}
+          width={600}
+        />
+      </CardMedia>
+    </Card>
+  )
+})
 
 const About = () => {
   return (
@@ -38,10 +75,10 @@ const About = () => {
         <div style={styles.quote}>“Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.”</div>
         <FlatButton style={styles.contactButton}>CONTACT US</FlatButton>
       </div>
-      <div style={styles.map}>
 
+      <div style={styles.location}>
+        <Location />
       </div>
-
     </div>
   )
 }

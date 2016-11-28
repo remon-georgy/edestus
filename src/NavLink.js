@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 import {isEmpty} from 'lodash';
 import NavButton from './NavButton'
 
@@ -13,6 +13,10 @@ const NavLink = ({title, path}) => {
   }
   
   return button;
+}
+NavLink.propTypes = {
+  title: PropTypes.string.isRequired,
+  path: PropTypes.string,
 }
 
 export default NavLink;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 import {Slider, Slides, PrevArrow, NextArrow, Dots} from 'react-flex-slick'
 
 const styles = {
@@ -46,6 +46,9 @@ const Carousel = ({slides}) => {
       </Slider>
     </div>
   );
+}
+Carousel.propTypes = {
+  slides: PropTypes.array.isRequired
 }
 
 export default Carousel;

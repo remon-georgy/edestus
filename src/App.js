@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import {Card, CardMedia} from 'material-ui/Card';
 
 import './App.css';
-import Location from './Location';
 import About from './About';
 import Footer from './Footer';
 import Header from './Header';
@@ -113,22 +112,6 @@ const styles = {
     flexDirection: 'column'
     // TODO
     // flexBasis? http://www.w3.org/TR/css3-flexbox/images/rel-vs-abs-flex.svg
-  },
-  
-  aboutContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    flexBasis: '100%'
-  },
-  aboutUs: {
-    order: 1,
-    flexGrow: 1,
-    flexBasis: 'auto'
-  },
-  map: {
-    order: 2,
-    flexGrow: 1,
-    flexBasis: 'auto'
   }
 }
 
@@ -156,13 +139,8 @@ class App extends Component {
           <Team members={getTeam()}/>
         </section>
 
-        <section id="about" style={styles.aboutContainer}>
-          <div style={styles.aboutUs}>
-            <About />
-          </div>
-          <div style={styles.map}>
-            <Location />
-          </div>
+        <section id="about">
+          <About />
         </section>
 
         <footer>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import FlatButton from 'material-ui/FlatButton';
 
 import Image from './Image'
@@ -60,6 +60,11 @@ const Product = ({title, image, text}) => {
       </div>
     </div>
   )
+}
+Product.propTypes = {
+  title: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
 }
 
 export default Product

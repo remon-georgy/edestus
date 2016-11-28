@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import Divider from 'material-ui/Divider';
 import {Toolbar, ToolbarGroup} from 'material-ui/Toolbar';
 import NavLink from './NavLink'
@@ -52,6 +52,11 @@ const Footer = ({logo, links, icons}) => {
       </Toolbar>
     </div>
   )
+}
+Footer.propTypes = {
+  logo: PropTypes.node.isRequired,
+  links: PropTypes.array.isRequired,
+  icons: PropTypes.array.isRequired,
 }
 
 export default Footer

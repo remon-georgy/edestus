@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import Image from './Image';
 
 const styles = {
@@ -24,9 +24,15 @@ const Work = ({image, alt}, context) => {
   const staticPath = require(image)
   return (<Image src={staticPath} alt={alt}/>)
 }
+Work.propTypes = {
+  image: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired
+}
 
 const Works = ({works}) => {
-  const work = works.map((work, i) => <Work style={styles.work} key={i} image={work.image}/>);
+  console.log(works)
+  const work = works.map((work, i) =>
+    <Work style={styles.work} key={i} image={work.image} alt={`${i}`} />);
 
   return (
     <div style={styles.container}>
@@ -36,6 +42,9 @@ const Works = ({works}) => {
       </div>
     </div>
   )
+}
+Works.propTypes = {
+  works: PropTypes.array.isRequired
 }
 
 export default Works;

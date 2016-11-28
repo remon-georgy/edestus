@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, {PropTypes} from 'react';
 import Image from './Image';
 
 const styles = {
@@ -20,11 +19,14 @@ const styles = {
   }
 }
 
-const TeamMember = ({ID, image}, context) => {
+const TeamMember = ({image}, context) => {
   const staticPath = require(image)
   return (<div style={styles.teamMember}>
     <Image alt={staticPath} src={staticPath} />
   </div>)
+}
+TeamMember.propTypes = {
+  image: PropTypes.string.isRequired,
 }
 
 const Team = ({members}) => {
@@ -38,6 +40,9 @@ const Team = ({members}) => {
       </div>
     </div>
   )
+}
+Team.propTypes = {
+  members: PropTypes.array.isRequired,
 }
 
 export default Team;

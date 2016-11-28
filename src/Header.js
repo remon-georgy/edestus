@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import {Toolbar, ToolbarGroup} from 'material-ui/Toolbar';
 import NavLink from './NavLink'
 
@@ -22,6 +22,10 @@ const Header = ({links, logo}) => {
       </ToolbarGroup>
     </Toolbar>
   )
+}
+Header.propTypes = {
+  logo: PropTypes.node.isRequired,
+  links: PropTypes.array.isRequired,
 }
 
 export default Header
