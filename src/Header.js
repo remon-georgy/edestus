@@ -9,7 +9,6 @@ const styles = {
 }
 
 const Header = ({links, logo}) => {
-  console.log(links)
   const NavLinks = links.map(({title, path}) =>
     <NavLink key={title} path={path} title={title.toUpperCase()} />)
 

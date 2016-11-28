@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+
+import {Card, CardMedia} from 'material-ui/Card';
+
 import './App.css';
 import Location from './Location';
 import About from './About';
@@ -8,6 +11,7 @@ import Works from './Works';
 import Team from './Team';
 import Product from './Product';
 import Carousel from './Carousel';
+import Image from './Image';
 
 import twitter from './images/twitter.png'
 import gplus from './images/google-plus.png'
@@ -84,6 +88,15 @@ const getWorks = () => {
   }]
 }
 
+const getCarouselSlides = () => {
+  return [<Card key='slide1'>
+    <CardMedia>
+      <Image alt='carouselItem' src={carouselImage}/>
+    </CardMedia>
+  </Card>,
+  <div key='slide2'>{'TEEETSTSTTSTSTS'}</div>]
+}
+
 // TODO Use icon font instead of images
 const getSocialIcons = () => {
   return [
@@ -128,7 +141,7 @@ class App extends Component {
         </header>
 
         <section>
-          <Carousel image={carouselImage} />
+          <Carousel slides={getCarouselSlides()} />
         </section>
 
         <section id="product">

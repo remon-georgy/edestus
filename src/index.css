@@ -3,3 +3,8 @@ body {
   padding: 0;
   font-family: 'Open Sans', sans-serif;
 }
+/* see https://github.com/akiran/react-slick*/
+* {
+  min-height: 0;
+  min-width: 0;
+}
